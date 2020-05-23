@@ -1,6 +1,7 @@
 ## Firmware of NanoPi R2S Based on Original OpenWRT
 
-### Released in Actions
+Release in:
+https://github.com/nicksun98/R2S-OpenWrt/releases
 
 ### Noticed：
 Login IP：192.168.1.1 
