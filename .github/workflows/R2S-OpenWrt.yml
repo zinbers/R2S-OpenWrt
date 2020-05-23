@@ -4,8 +4,6 @@ on:
 #  push:
 #    branches: 
 #      - master
-  schedule:
-    - cron: 40 11 * * *
   watch:
     types: [started]
 
@@ -31,14 +29,6 @@ jobs:
         sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php
         git clone https://github.com/friendlyarm/repo
         sudo cp repo/repo /usr/bin/
-    - name: Free Disk Space
-      run: |
-        sudo swapoff -a
-        sudo rm -f /swapfile
-        sudo apt clean
-        sudo rm -rf "/usr/local/share/boost"
-        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-        df -h
     - name: Cleanup Old Action Artifacts
       uses: kolpav/purge-artifacts-action@v1
       with:
