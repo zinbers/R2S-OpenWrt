@@ -1,29 +1,20 @@
-## R2S 基于原生OpenWRT 的固件
+## Firmware of NanoPi R2S Based on Original OpenWRT
 
-### 发布地址：
-https://github.com/QiuSimons/R2S-OpenWrt/releases
+### Released in Actions
 
-### 追新党可以在Action中取每日更新（可能会翻车，风险自担）：
-https://github.com/QiuSimons/R2S-OpenWrt/actions
+### Noticed：
+Login IP：192.168.1.1 
 
-### 本地一键编译命令（注意装好依赖）：
-git clone https://github.com/QiuSimons/R2S-OpenWrt.git&&cd R2S-OpenWrt&&bash onekeyr2s.sh
+Password：None
 
-### 注意事项：
-1.登陆IP：192.168.1.1 密码：无
+### Version Informations:
+Other modules：SNAPSHOT（The day of the latest action）
 
-2.LAN 和 WAN的灯可能不亮
+LUCI version：19.07（The day of the latest action）
 
-3.OP内置升级可用
+### Feature：
+1.O3, Ofast
 
-4.SSRP使用姿势： ①添加你要的订阅链接 ②再在最后加一行空行 ③右下角点一下保存并应用 ④更新所有订阅服务器节点
+2.SSRP ONLY
 
-### 版本信息：
-其他模块版本：SNAPSHOT（当日最新）
-
-LUCI版本：19.07（当日最新）
-
-### 特性及功能：
-1.O3编译
-
-2.内置两款主题，包含SSRP，openclash，adguardhome，微信推送，网易云解锁，SQM，SmartDNS，网络唤醒，应用过滤，DDNS，迅雷快鸟，UPNP，FullCone，流量分载（offload），BBR（默认开启）
+## Thanks to all friends in NanoPi R2S Club
