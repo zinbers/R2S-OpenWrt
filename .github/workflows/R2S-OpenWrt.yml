@@ -19,6 +19,14 @@ jobs:
     steps:
     - name: Clone Repository
       uses: actions/checkout@v1
+    - name: free disk space
+      run: |
+        sudo swapoff -a
+        sudo rm -f /swapfile
+        sudo apt clean
+        docker rmi $(docker image ls -aq)
+        df -h
+        /bin/bash ./SCRIPTS/free_disk_space.sh
     - name: Init build dependencies
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -33,14 +41,6 @@ jobs:
         sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php
         git clone https://github.com/friendlyarm/repo
         sudo cp repo/repo /usr/bin/
-    - name: free disk space
-      run: |
-        sudo swapoff -a
-        sudo rm -f /swapfile
-        sudo apt clean
-        docker rmi $(docker image ls -aq)
-        df -h
-        /bin/bash ./SCRIPTS/free_disk_space.sh
     - name: Cleanup Old Action Artifacts
       uses: kolpav/purge-artifacts-action@v1
       with:
