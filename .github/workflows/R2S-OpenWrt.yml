@@ -4,6 +4,10 @@ on:
   push:
     branches: 
       - master
+    paths:
+      - '.github/workflows/R2S-OpenWrt.yml'
+      - 'SEED/config.seed'
+      - 'SCRIPTS/02_prepare_package.sh'
  # watch:
  #   types: [started]
 
@@ -29,6 +33,14 @@ jobs:
         sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php
         git clone https://github.com/friendlyarm/repo
         sudo cp repo/repo /usr/bin/
+    - name: free disk space
+      run: |
+        sudo swapoff -a
+        sudo rm -f /swapfile
+        sudo apt clean
+        docker rmi $(docker image ls -aq)
+        df -h
+        /bin/bash ./SCRIPTS/free_disk_space.sh
     - name: Cleanup Old Action Artifacts
       uses: kolpav/purge-artifacts-action@v1
       with:
