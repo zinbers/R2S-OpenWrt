@@ -18,4 +18,6 @@ LUCI version：19.07（The day of the latest action）
 
 2.SSRP ONLY
 
+![](/Screenshots/ss.jpeg)
+
 ## Thanks to all friends in NanoPi R2S Club
